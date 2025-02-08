@@ -17,4 +17,4 @@ jobs:
           ref: master
 
       - name: Run analyze
-        run: npx @omlet/cli@01.13.1 analyze --dry-run
+        run: npx @omlet/cli@0.0.0-staging-202502080531-138fcc analyze --dry-run
