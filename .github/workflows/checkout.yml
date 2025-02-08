@@ -1,0 +1,19 @@
+name: Sparse Checkout
+on:
+  push:
+    branches: [ "master" ]
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            packages
+            excalidraw-app
+          fetch-depth: 0
+          ref: master
+
+      - name: Run analyze
+        run: npx @omlet/cli@01.13.1 analyze --dry-run
