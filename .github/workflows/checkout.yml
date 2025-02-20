@@ -8,13 +8,6 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-        with:
-          sparse-checkout: |
-            .git
-            packages
-            excalidraw-app
-          fetch-depth: 0
-          ref: master
 
       - name: Run analyze
-        run: npx @omlet/cli@0.0.0-staging-202502080531-138fcc analyze --dry-run
+        run: npx @omlet/cli@1.13.2 analyze --dry-run
